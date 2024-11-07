@@ -5,98 +5,29 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            margin: 20px;
-            text-align: center;
-        }
-
-        h1 {
-            margin-bottom: 30px;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            background-image: url('your_background_image.jpg'); /* Replace with your image path */
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
         form {
-            width: 400px;
-            margin: 0 auto;
+            background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
         }
 
-        label {
-            display: block;
-            margin-bottom: 5px;
-        }
-
-        input[type="text"],
-        input[type="number"] {
-            width: 100%;
-            padding: 5px;
-            margin-bottom: 10px;
-        }
-
-        select {
-            width: 100%;
-            padding: 5px;
-            margin-bottom: 10px;
-        }
-
-        button {
-            padding: 10px 20px;
-            background-color: black;
-            color: yellow;
-            border: none;
-            cursor: pointer;
-        }
+        /* Rest of your form styles */
     </style>
 </head>
 <body>
-    <h1>Refund Form</h1>
     <form id="refundForm">
-        <label for="firstName">First Name:</label>
-        <input type="text" id="firstName" name="firstName" required>
-
-        <label for="lastName">Last Name:</label>
-        <input type="text" id="lastName" name="lastName" required>
-
-        <label for="streetAddress">Street Address:</label>
-        <input type="text" id="streetAddress" name="streetAddress" required>
-
-        <label for="city">City:</label>
-        <input type="text" id="city" name="city" required>
-
-        <label for="state">State:</label>
-        <input type="text" id="state" name="state" required>
-
-        <label for="zipCode">Zip Code:</label>
-        <input type="text" id="zipCode" name="zipCode" required>
-
-        <label for="refundAmount">Refund Amount:</label>
-        <input type="number" id="refundAmount" name="refundAmount" required max="999999">
-
-        <button type="submit">Submit</button>
-    </form>
-
-    <script>
-        const form = document.getElementById('refundForm');
-
-        form.addEventListener('submit', (event) => {
-            event.preventDefault();
-
-            const formData = new FormData(form);
-            const data = [];
-
-            for (const [key, value] of formData.entries()) {
-                data.push(value);
-            }
-
-            const csvContent = data.join(',');
-
-            const element = document.createElement('a');
-            const file = new Blob([csvContent], {type: 'text/csv'});
-            element.href = URL.createObjectURL(file);
-            element.download = 'refund_data.csv';
-            document.body.appendChild(element);
-            element.click();
-
-            // Redirect to success page
-            window.location.href = 'success.html';
-        });
-    </script>
+        </form>
 </body>
 </html>
